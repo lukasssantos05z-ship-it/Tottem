@@ -1,0 +1,39 @@
+name: Compilar APK Hospital Kiosk
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 17 (JDK)
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Configurar Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.x'
+          channel: 'stable'
+          cache: true
+
+      - name: Instalar Dependências do Flutter
+        run: flutter pub get
+
+      - name: Compilar APK (Release)
+        run: flutter build apk --release --no-tree-shake-icons
+
+      - name: Fazer Upload do APK Compilado (Artefato)
+        uses: actions/upload-artifact@v4
+        with:
+          name: hospital-totem-kiosk-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk

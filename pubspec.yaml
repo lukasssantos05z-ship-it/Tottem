@@ -1,0 +1,38 @@
+name: hospital_refectory_kiosk
+description: Totem de autoatendimento para controle de refeitorio hospitalar com biometria facial e impressao termica.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  provider: ^6.1.1
+  uuid: ^4.3.3
+  intl: ^0.19.0
+  crypto: ^3.0.3
+
+  camera: ^0.10.5+9
+  google_mlkit_face_detection: ^0.11.0
+
+  blue_thermal_printer: ^1.2.3
+  esc_pos_utils_plus: ^2.0.3
+
+  sqflite_sql_cipher: ^3.1.0+1
+  flutter_secure_storage: ^9.0.0
+
+  csv: ^6.0.0
+  pdf: ^3.10.8
+  path_provider: ^2.1.2
+  share_plus: ^7.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
