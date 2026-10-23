@@ -21,7 +21,7 @@ dependencies:
   blue_thermal_printer: ^1.2.3
   esc_pos_utils_plus: ^2.0.3
 
-  sqflite_sql_cipher: ^3.1.0+1
+  sqflite: ^3.1.0+1
   flutter_secure_storage: ^9.0.0
 
   csv: ^6.0.0
